@@ -47,7 +47,7 @@ switch ($uri[0]) {
         require ROOT . "modules/login/registration.php";
         break;
     case 'logout':
-        require ROOT . "modules/login/logout.php";
+        require ROOT . "modules/logout/logout.php";
         break;
     case 'lost-password':
         require ROOT . "modules/login/lost-password.php";
@@ -59,7 +59,7 @@ switch ($uri[0]) {
         require ROOT . "modules/profile/index.php";
         break;
     case 'profile-edit':
-        require ROOT . "modules/profile/edit.php";
+        require ROOT . "modules/profile/profile-edit.php";
         break;
         
     // ::::::::::::::::::: END  USERS :::::::::::::::::::

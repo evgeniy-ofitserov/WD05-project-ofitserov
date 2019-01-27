@@ -1,5 +1,7 @@
 <?php 
 
+// Выводим title  на странице
+$title = 'Регистрация нового пользователя ' . ' | ';
 
 
 
@@ -51,7 +53,7 @@ if (trim($_POST['password']) == '') {
         $_SESSION['login'] = "1";
         $_SESSION['role'] = $user->role;
 
-        header('Location:' . HOST);
+        header('Location:' . HOST . "profile-edit");
         exit();
 
     }
@@ -73,6 +75,8 @@ $contentReg = ob_get_contents();
 ob_end_clean();
 
 
+
+include  ROOT ."templates/_parts/_head.tpl";
 include  ROOT ."templates/login/login-page.tpl";
 
 

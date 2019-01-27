@@ -1,5 +1,9 @@
 <?php 
 
+// Выводим title  на странице
+
+$title = 'Вход на сайт ' . ' | ' ;
+
 // Проверяем на ошибки
 
 if (isset($_POST['enter-login'])) {
@@ -41,10 +45,8 @@ include  ROOT ."templates/login/form-login.tpl";
 $contentReg = ob_get_contents();
 ob_end_clean();
 
-
+include  ROOT ."templates/_parts/_head.tpl";
 include  ROOT ."templates/login/login-page.tpl";
-
-
-
+// include  ROOT ."templates/_parts/foot.tpl";
 
 ?>

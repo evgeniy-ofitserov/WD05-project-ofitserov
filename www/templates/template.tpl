@@ -1,6 +1,3 @@
-<aside>
-    <h1>Sidebar</h1>
-</aside>
-
+<body class="index-page">
 
 <?php echo $content;?>
