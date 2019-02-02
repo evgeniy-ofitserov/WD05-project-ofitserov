@@ -21,6 +21,7 @@ define('ROOT',  dirname(__FILE__).'/');
 $errors = array();
 
 
+
 // Константы поль-ля ADMIN
 
 define('SITE_NAME', 'Сайт-портфолио - WebDev05');

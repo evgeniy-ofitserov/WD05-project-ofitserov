@@ -3,7 +3,6 @@
 $title  = 'Главная страница ' . ' | ';
 
 
-// $content = "Содержимое главной страницы";
 ob_start();
 include  ROOT ."templates/_parts/_header.tpl";
 // include  ROOT ."templates/main/main.tpl";

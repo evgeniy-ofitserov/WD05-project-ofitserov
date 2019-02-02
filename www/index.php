@@ -3,6 +3,7 @@ require "config.php";
 require "db.php";
 require "libs/functions.php";
 session_start();
+
 /*..............................
 
          РОУТЕР
@@ -58,8 +59,8 @@ switch ($uri[0]) {
     case 'profile':
         require ROOT . "modules/profile/index.php";
         break;
-    case 'profile-edit':
-        require ROOT . "modules/profile/profile-edit.php";
+    case 'edit':
+        require ROOT . "modules/profile/edit.php";
         break;
         
     // ::::::::::::::::::: END  USERS :::::::::::::::::::
@@ -77,7 +78,6 @@ switch ($uri[0]) {
         include "modules/main/index.php";
         break;
 }
-
 
 /*..............................
 

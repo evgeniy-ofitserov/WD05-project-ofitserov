@@ -3,9 +3,9 @@
                         <div class="user-block__wrapper">
                             <div class="row user-group">
                                 <div class="avatar avatar--small"><img src="../img/avatars/avatar.jpg" alt="alt text avatar" /></div>
-                                <div class="user-name"><span>Евгений Офицеров</span>
+                                <div class="user-name"><span><?=$_SESSION['logger_user']['name']?> <?=$_SESSION['logger_user']['subname']?> </span>
                                     <p>Пользователь</p>
-                                    <div class="row user-buttons"><a class="button button-profile" href="user-profile.html">Профиль</a><a class="button button-profile" href="<?=HOST?>logout">Выход</a></div>
+                                    <div class="row user-buttons"><a class="button button-profile" href="<?=HOST?>pofile">Профиль</a><a class="button button-profile" href="<?=HOST?>logout">Выход</a></div>
                                 </div>
                             </div>
                         </div>
