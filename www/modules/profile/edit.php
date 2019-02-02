@@ -50,7 +50,6 @@ if ( isset($_POST['update'])) {
 
     }
 
-}
 
 ob_start();
 include  ROOT ."templates/_parts/_header.tpl";
