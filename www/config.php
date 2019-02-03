@@ -19,12 +19,14 @@ define('HOST',  $_SERVER['REQUEST_SCHEME'] . '://'. $_SERVER['HTTP_HOST'] . '/')
 define('ROOT',  dirname(__FILE__).'/');
 
 $errors = array();
+$success = array();
+
 
 
 
 // Константы поль-ля ADMIN
 
 define('SITE_NAME', 'Сайт-портфолио - WebDev05');
-define('SITE_EMAIL', 'evgeniy@ya.ru');
+define('SITE_EMAIL', 'admin@site.ru');
 define('ADMIN_EMAIL', 'root@ya.ru');
 
