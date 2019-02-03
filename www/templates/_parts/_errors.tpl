@@ -12,7 +12,7 @@
             <!--Ошибка с описанием-->
         <div class="notification__title notification--error notification--with-description"><?=$error['title']?></div>
             <div class="notification__description">
-                    <?=$error['descr']?>
+                    <?=@$error['descr']?>
             </div>
     <?php    
         }

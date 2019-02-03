@@ -18,7 +18,8 @@
                     <section class="upload-file">
                         <h6 class="upload-file__title">Фотография</h6>
                         <p class="upload-file__description">Изображение jpg или png, рекомендуемый размер 100x100 пикселей, и весом до 2Мб.</p>
-                        <input class="input-file" type="file" name="upload-file" id="upload-file" data-multiple-caption="{count}" /><label class="input-file-mark" for="upload-file">Выбрать файл</label><span>Файл не выбран</span>
+                        <input class="input-file" type="file" name="avatar" id="upload-file" data-multiple-caption="{count}" />
+                        <label class="input-file-mark" for="upload-file">Выбрать файл</label><span>Файл не выбран</span>
                     </section>
                 </div>
                 <div class="user-edit-wrapper mt-30">

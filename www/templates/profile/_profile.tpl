@@ -8,12 +8,21 @@
                 </div>
                 <div class="user-profile-information mb-35 mt-40">
                     <div class="user-profile__avatar">
-                        <div class="avatar"><img src="../img/avatars/avatar.jpg" alt="alt text avatar" /></div>
+                    <div class="avatar">
+                        <?php    
+                        if( $_SESSION['logger_user']['avatar'] != '' ){?>
+                        <img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logger_user']['avatar']?>" alt="<?=$_SESSION['logger_user']['avatar']?> "/>
+                        <?php   }else{ ?>
+                        <img src="../img/avatars/avatar.jpg" alt="<?=$_SESSION['logger_user']['avatar']?>" />
+                        <?php    
+                        }
+                        ?>  
+                    </div>
                     </div>
                     <div class="user-profile__description"><span>Имя и фамилия</span>
                         <p><?=$currentUser->name?> <?=$currentUser->subname?></p><span>Email</span>
                         <p><?=$currentUser->email?></p><span>Страна, Город</span>
-                        <p><?=$currentUser->country?>, <?=$currentUser->city?></p>
+                        <p><?=$currentUser->country?> <?=$currentUser->city?></p>
                     </div>
                 </div>
                 <h2 class="title-2 title-2--color mt-0 mb-25">Комментарии пользователя</h2>

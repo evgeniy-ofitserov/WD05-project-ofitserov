@@ -2,6 +2,7 @@
 
 $title  = 'Профиль пользователя' . ' | ';
 
+$currentUser = $_SESSION['logger_user'];
 
 ob_start();
 include  ROOT ."templates/_parts/_header.tpl";
