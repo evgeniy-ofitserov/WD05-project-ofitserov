@@ -4,7 +4,7 @@
                 <div class="autorization-content">
     
                     <h1 class="autorization-content__title mb-40">Восстановление пароля</h1>
-                    <form class="autorization-content-form" action="<?=HOST?>set-new-password" method="POST">
+                    <form class="autorization-content-form" action="<?=HOST?>set-new-password" method="POST" novalidate>
                         <div class="notification">
                              <?php require ROOT . "templates/_parts/_errors.tpl" ?>
                              <?php require ROOT . "templates/_parts/_success.tpl" ?>

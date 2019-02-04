@@ -5,7 +5,7 @@
 
             <?php require ROOT . "templates/_parts/_errors.tpl" ?>
 
-            <form class="mt-35" action="<?=HOST?>edit" enctype="multipart/form-data" method="POST">
+            <form class="mt-35" action="<?=HOST?>edit" enctype="multipart/form-data" method="POST" novalidate>
                 <div class="user-edit-wrapper">
                     <div class="user-edit-name"><label class="label" for="userEditName">Имя</label>
                     <input class="input" name="name" id="userEditName" type="text" placeholder="Введите имя" value="<?=$currentUser->name?>" /></div>

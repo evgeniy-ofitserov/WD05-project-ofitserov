@@ -2,6 +2,7 @@
 $recoveryCode = false;
 $newPasswordReady = false;
 
+
 // Находим польз. по емайлу. Он в гет параметре. Если не пустой гет массив email
 
     if ( !empty($_GET['email']) ) {
