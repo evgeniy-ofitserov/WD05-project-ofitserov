@@ -12,8 +12,7 @@
                             <?php    
                                 }
                             ?>
-
-                                </div>
+                         
                             </div>
                                 <div class="user-name"><span><?=$_SESSION['logger_user']['name']?> <?=$_SESSION['logger_user']['subname']?> </span>
                                     <p>Пользователь</p>

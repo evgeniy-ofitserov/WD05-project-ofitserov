@@ -3,8 +3,8 @@
 // Выводим title  на странице
 $title = 'Регистрация нового пользователя ' . ' | ';
 
-
-
+$email = '';
+$pass = '';
 // Проверяем нашу форму на отправку в Post - массиве
 
 
@@ -13,12 +13,21 @@ $title = 'Регистрация нового пользователя ' . ' | '
 if (isset($_POST['enter-button'])) {
     
 
-if (trim($_POST['email']) == '') {
-    $errors[] = ['title' => 'Введите Email', 'descr' => '<p>Email обязателен для регистрации.</p>'];
-}
-if (trim($_POST['password']) == '') {
-    $errors[] = ['title' => 'Введите пароль'];
-}
+    if (trim($_POST['email']) == '') {
+        $errors[] = ['title' => 'Введите Email', 'descr' => '<p>Email обязателен для регистрации.</p>'];
+    }else{
+        
+            $email = $_POST['email'];
+
+        if (preg_match("/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i", $email)) {
+
+        }else{
+            $errors[] = ['title' => 'Неверный формат email', 'descr' => '<p>Укажите правильный формат, напимер: - MyEmail@mail.ru </p>'];
+        }
+    }
+    if (trim($_POST['password']) == '') {
+        $errors[] = ['title' => 'Введите пароль'];
+    }else{
 
     // Проверка что польз. не существует
 
@@ -31,30 +40,31 @@ if (trim($_POST['password']) == '') {
 
     // Если ошибки пустые, значит записываем данные 
 
-    if (empty($errors)) {
-        
-    // Создаем запрос к бД, где (автом. если ее нет, создается таблица user), передаем данные
-        $user = R::dispense('users'); 
-        // в таблицу $user  записать в строку email = (функц.htmlentities, очищает от инъекций) пост - массив $_POST['email']
-        $user->email = htmlentities($_POST['email']);
-    $user->role = 'user'; 
-        // в таблицу $users  записать в строку password = (функц.password_hash, КОДИРУЕТ ПАРОЛЬ В ХЭШ ) пост - массив $_POST['password'], ГДЕ PASSWORD_DEFAULT - МЕХАНИЗМ ШИФРОВАНИЯ
-        $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        // опредлим роль. добавим в таблицу строку role куда запишем = user
-        $user->role = 'user'; 
-        // СОХРАНЯЕМ ПОЛЬЗОВАТЕЛЯ В БД
+        if (empty($errors)) {
+            
+        // Создаем запрос к бД, где (автом. если ее нет, создается таблица user), передаем данные
+            $user = R::dispense('users'); 
+            // в таблицу $user  записать в строку email = (функц.htmlentities, очищает от инъекций) пост - массив $_POST['email']
+            $user->email = htmlentities($_POST['email']);
+            $user->role = 'user'; 
+            // в таблицу $users  записать в строку password = (функц.password_hash, КОДИРУЕТ ПАРОЛЬ В ХЭШ ) пост - массив $_POST['password'], ГДЕ PASSWORD_DEFAULT - МЕХАНИЗМ ШИФРОВАНИЯ
+            $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            // опредлим роль. добавим в таблицу строку role куда запишем = user
+            $user->role = 'user'; 
+            // СОХРАНЯЕМ ПОЛЬЗОВАТЕЛЯ В БД
 
-        R::store($user);
+            R::store($user);
 
+                    // Запускаем сессию
+            $_SESSION['logger_user'] = $user;
+            $_SESSION['login'] = "1";
+            $_SESSION['role'] = $user->role;
 
-        // Запускаем сессию
+            header('Location:' . HOST . "profile");
+            exit();
 
-        $_SESSION['logger_user'] = $user;
-        $_SESSION['login'] = "1";
-        $_SESSION['role'] = $user->role;
-
-        header('Location:' . HOST . "profile");
-        exit();
+        } 
+  
 
     }
 

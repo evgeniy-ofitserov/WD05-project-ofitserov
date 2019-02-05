@@ -12,6 +12,7 @@
                         }
                     ?>
                  </div>
+                
             </a>
             <div class="brif ml-20">
                 <p class="brif__name"><?=$_SESSION['logger_user']['name']?> <?=$_SESSION['logger_user']['subname']?></p><span class="badge"><a href= "<?=HOST?>edit">Администратор</a></span>

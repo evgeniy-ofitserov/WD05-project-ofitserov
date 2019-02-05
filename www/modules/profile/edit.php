@@ -3,7 +3,7 @@
 $title  = 'Редактировать профиль ' . ' | ';
 
 $currentUser = $_SESSION['logger_user'];
-
+$email = false;
 
 $user = R::load('users', $currentUser->id);
 
@@ -14,8 +14,20 @@ $user = R::load('users', $currentUser->id);
 
 if ( isset($_POST['update'])) {
 
-    if ( trim($_POST['email'])  == '') {
-        $errors[] = ['title' => 'Введите Email'];
+    if (trim($_POST['email']) == '') {
+        $errors[] = ['title' => 'Введите Email', 'descr' => '<p>Email обязателен.</p>'];
+    }else{
+        
+        $email = $_POST['email'];
+
+        // Проверяем на корректность введенного email
+        
+        if (preg_match("/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i", $email)) {
+            $email = true;
+
+        }else{
+            $errors[] = ['title' => 'Неверный формат email', 'descr' => '<p>Укажите правильный формат, напимер: - MyEmail@mail.ru </p>'];
+        }
     }
     if ( trim($_POST['name'])  == '') {
         $errors[] = ['title' => 'Введите Имя'];
@@ -81,7 +93,7 @@ if ( isset($_POST['update'])) {
 
                 $errors[] = ['title' => 'Недопустимое расширение файла',
                               'descr' => '<p>Разрешенный формат gif, jpg, png, gif </p>'];
-                
+             
             } 
             if ( $fileErrors == 1 ) {
 
