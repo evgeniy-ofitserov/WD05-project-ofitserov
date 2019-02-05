@@ -3,6 +3,7 @@
         <div class="col-12 flex--center">
             <div class="autorization-content">
                 <h1 class="autorization-content__title mb-40">Вход на сайт</h1>
+
                 <form class="autorization-content-form" action="" method="POST" novalidate>
                     <div class="notification">
                          <?php require ROOT . "templates/_parts/_errors.tpl" ?>
@@ -17,4 +18,3 @@
                 </form>
             </div>
         </div>
-
