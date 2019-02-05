@@ -12,7 +12,7 @@ $email = false;
     
         // проверка на ввод email
         if (trim($_POST['email']) == '') {
-            $errors[] = ['title' => 'Введите Email', 'descr' => '<p>Email обязателен для регистрации.</p>'];
+            $errors[] = ['title' => 'Введите Email', 'descr' => '<p>Email обязателен для восстановления.</p>'];
         }else{
             
             $email = $_POST['email'];
