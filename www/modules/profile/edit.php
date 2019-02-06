@@ -52,6 +52,8 @@ if ( isset($_POST['update'])) {
 
         if ( isset($_FILES['avatar']['name'] ) && $_FILES['avatar']['tmp_name'] != "" ) {
 
+
+            
         // Запишем в переменные параметры в массив FILES
 
             $fileName = $_FILES['avatar']['name'];

@@ -41,39 +41,39 @@ function createThumbnail($imagePath, $cropWidth = 100, $cropHeight = 100){
 	$imagick->destroy();
 }
 
-// function createThumbnailBig($imagePath, $cropWidth, $cropHeight){
+function createThumbnailBig($imagePath, $cropWidth, $cropHeight){
 	
-// 	/* Чтение изображения */
-// 	$imagick = new Imagick($imagePath);
-// 	$width = $imagick->getImageWidth();
-// 	$height = $imagick->getImageHeight();
+	/* Чтение изображения */
+	$imagick = new Imagick($imagePath);
+	$width = $imagick->getImageWidth();
+	$height = $imagick->getImageHeight();
 
 
-// 	if ( $width >= $height ) {
-// 		// Для широких картинок
-// 		$imagick->thumbnailImage($cropWidth, 0);
-// 	} else {
-// 		// Для высоких картинок
-// 		// $imagick->thumbnailImage($cropWidth, 0);
-// 		// $imagick->cropThumbnailImage($cropWidth, $cropHeight);
+	if ( $width >= $height ) {
+		// Для широких картинок
+		$imagick->thumbnailImage($cropWidth, 0);
+	} else {
+		// Для высоких картинок
+		// $imagick->thumbnailImage($cropWidth, 0);
+		// $imagick->cropThumbnailImage($cropWidth, $cropHeight);
 		
-// 		$imagick->thumbnailImage(0, $cropHeight);
-// 	}
+		$imagick->thumbnailImage(0, $cropHeight);
+	}
 
-// 	return $imagick;
-// 	$imagick->destroy();
-// }
+	return $imagick;
+	$imagick->destroy();
+}
 
-// function createThumbnailCrop($imagePath, $cropWidth, $cropHeight){
+function createThumbnailCrop($imagePath, $cropWidth, $cropHeight){
 	
-// 	/* Чтение изображения */
-// 	$imagick = new Imagick($imagePath);
-// 	$width = $imagick->getImageWidth();
-// 	$height = $imagick->getImageHeight();
-// 	$imagick->cropThumbnailImage($cropWidth, $cropHeight);
-// 	return $imagick;
-// 	$imagick->destroy();
+	/* Чтение изображения */
+	$imagick = new Imagick($imagePath);
+	$width = $imagick->getImageWidth();
+	$height = $imagick->getImageHeight();
+	$imagick->cropThumbnailImage($cropWidth, $cropHeight);
+	return $imagick;
+	$imagick->destroy();
 
-// }
+}
 
 ?>

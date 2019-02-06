@@ -8,7 +8,7 @@
 
         <div class="notification">
             <div class="notification__title notification--error notification--with-description mt-10 mb-10"><?=$error['title']?></div>
-
+ </div>
       
      <?php   }else if( count($error) == 2 ){ ?>
           <div class="notification">
