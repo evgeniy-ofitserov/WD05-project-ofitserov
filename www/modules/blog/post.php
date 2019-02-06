@@ -1,16 +1,17 @@
 <?php
 
-$title  = 'Блог все записи' . ' | ';
+$title  = 'Блог ' . ' | ';
 
 
-// ПОЛУЧАЕМ ВСЕ ПОСТЫ сортируем по убыванию
-$posts = R::find('posts', 'ORDER BY id DESC');
+// ПОЛУЧАЕМ один  ПОСТ 
+$post = R::findOne('posts', 'id = ?', array($_GET['id']));
+
 
 
 
 ob_start();
 include  ROOT ."templates/_parts/_header.tpl";
-include ROOT . "templates/blog/blog-posts-all.tpl";
+include ROOT . "templates/blog/blog-post.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 

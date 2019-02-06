@@ -57,13 +57,9 @@ if(isset($_POST['new-post'])) {
                     $errors[] = ['title' => 'Ошибка сохранения файла'];
 
                 }
-
-
                 include_once(ROOT . 'libs/image_resize_imagick.php');
 
-
-
-                //Устаналиваем размеры для большой картинки блога
+                //Устаналиваем размеры 
                 $target_file = $postImgFolterLocation . $db_file_name;
                 $wmax = 920;
                 $hmax = 620;
@@ -86,14 +82,13 @@ if(isset($_POST['new-post'])) {
                 $img = createThumbnailCrop($target_file, $wmax, $hmax);
                 $img->writeImage($resized_file);
                 $post->postImgSmall = '320-' . $db_file_name;
-                R::store($post);
-                header('Location: ' . HOST . 'blog');
-                exit();
             }
 
+            }
+            R::store($post);
+                header('Location: ' . HOST . 'blog');
+                exit();
         }
-
-    }
 }
 
 ob_start();

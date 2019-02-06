@@ -80,6 +80,13 @@ switch ($uri[0]) {
         case 'blog/post-new':
         include "modules/blog/post-new.php";
         break;
+
+        //Отдельный пост
+
+        case 'blog/post':
+        include "modules/blog/post.php";
+        break;
+
     // ::::::::::::::::::: END BLOG :::::::::::::::::::
 
     default:

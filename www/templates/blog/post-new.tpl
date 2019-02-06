@@ -3,6 +3,7 @@
         <div class="col-10 offset-1 p-0">
             <div class="add-post-content">
                 <h1 class="title-general mt-0 mb-10">Добавить пост</h1>
+   
 
                      <?php require ROOT . "templates/_parts/_errors.tpl" ?>
           
@@ -21,7 +22,9 @@
                     </div>
                     <div class="add-post-content__main mt-30">
                         <label class="label" for="addPostText">Содержание</label>
-                            <textarea class="textarea input-post-content" name="post-text" id="addPostText" placeholder="Введите текст поста"></textarea>
+                            <textarea class="textarea input-post-content" name="post-text" id="addPostText" placeholder="Введите текст поста">
+                           
+                            </textarea>
                         </div>
                     <div class="add-post-content__submit mt-30">
                         <input class="button button-save mr-20" type="submit" name="new-post" value="Добавить" />
