@@ -29,7 +29,7 @@
 					<div class="title-2">2 комментария</div>
 					<div class="user-comment">
 						<div class="user-comment__avatar">
-							<div class="avatar avatar--small"><img src="../img/avatars/avatar-2.jpg" alt="Джон До собственной персоной" /></div>
+							<div class="avatar avatar--small"><img src="../img/avatars/avatar.jpg" alt="Джон До собственной персоной" /></div>
 						</div>
 						<div class="user-comment-info-wrapper"><span class="user-comment__name">Джон До</span><span class="user-comment__date"><i class="far fa-clock"></i>01 декабря 2018 года в 15:37</span>
 							<div class="user-comment__text">
@@ -39,7 +39,7 @@
 					</div>
 					<div class="user-comment">
 						<div class="user-comment__avatar">
-							<div class="avatar avatar--small"><img src="../img/avatars/avatar-3.jpg" alt="Джейн До собственной персоной" /></div>
+							<div class="avatar avatar--small"><img src="../img/avatars/avatar.jpg" alt="Джейн До собственной персоной" /></div>
 						</div>
 						<div class="user-comment-info-wrapper"><span class="user-comment__name">Джейн До</span><span class="user-comment__date"><i class="far fa-clock"></i>02 декабря 2018 года в 19:47</span>
 							<div class="user-comment__text">

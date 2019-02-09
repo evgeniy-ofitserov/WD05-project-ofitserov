@@ -89,6 +89,28 @@ switch ($uri[0]) {
 
     // ::::::::::::::::::: END BLOG :::::::::::::::::::
 
+    // ::::::::::::::::::: Category :::::::::::::::::::
+
+    case 'blog/categories':
+    include "modules/categories/all.php";
+    break;
+    
+    case 'blog/category-new':
+    include "modules/categories/new.php";
+    break;
+    
+    case 'blog/category-edit':
+    include "modules/categories/edit.php";
+    break;
+    
+    case 'blog/category-delete':
+    include "modules/categories/delete.php";
+    break;
+    
+
+// ::::::::::::::::::: END Category :::::::::::::::::::
+
+
     default:
         include "modules/main/index.php";
         break;
