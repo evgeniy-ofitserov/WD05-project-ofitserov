@@ -10,6 +10,7 @@ if(isset($_POST['cat-new'])){
     
     }
 
+
     if( empty($errors)){
 
         // Создаем категорию
@@ -17,10 +18,16 @@ if(isset($_POST['cat-new'])){
         $cat = R::dispense('categories');
         $cat->cat_title = htmlentities($_POST['cat-title']);
 
+        if (R::count('categories', 'cat_title = ?', array($_POST['cat-title']) ) > 0) {
 
-        R::store($cat);
-        header('Location:' . HOST . "blog/categories?result=catCreated");
-        exit();
+        $errors[] = ['title' => 'Такая категория уже существует'];
+
+        }else{
+            R::store($cat);
+            header('Location:' . HOST . "blog/categories?result=catCreated");
+            exit();
+
+        }
 
     }
 
