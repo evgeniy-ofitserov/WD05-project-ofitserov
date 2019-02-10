@@ -18,7 +18,7 @@
                 <p class="brif__name"><?=$_SESSION['logger_user']['name']?> <?=$_SESSION['logger_user']['subname']?></p><span class="badge"><a href= "<?=HOST?>edit">Администратор</a></span>
             </div>
         </div>
-        <nav class="admin-nav ml-70"><a href="add-post.html"><i class="fas fa-plus-circle"></i>Пост</a>
+        <nav class="admin-nav ml-70"><a href="<?=HOST?>blog/post-new"><i class="fas fa-plus-circle"></i>Пост</a>
         <a href="<?=HOST?>blog/categories">
         <i class="fas fa-folder"></i>Категории</a>
         <a href="works-add-work.html"><i class="fas fa-plus-circle"></i>Работа</a><a href="about-me.html"><i class="fas fa-edit"></i>Обо мне</a><a href="contacts-edit.html"><i class="fas fa-edit"></i>Контакты</a><a href="contacts-messages.html"><i class="fas fa-envelope"></i>Сообщения</a></nav>

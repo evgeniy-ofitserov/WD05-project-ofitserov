@@ -2,6 +2,9 @@
 
 $title  = 'Добавить пост' . ' | ';
 
+// Получаем список всех категорий
+
+$cats = R::find('categories', 'ORDER BY cat_title ASC');
 
 
 // Проверяем
@@ -22,7 +25,8 @@ if(isset($_POST['new-post'])) {
         $post = R::dispense('posts');
         $post->title = htmlentities($_POST['post-title']);
         $post->text = $_POST['post-text'];
-        $post->dataTime = R::isoDateTime();
+        $post->dateTime = R::isoDateTime();
+        $post->postCat = $_POST['postCat'];
         $post->authorId = $_SESSION['logger_user']['id'];
 
 

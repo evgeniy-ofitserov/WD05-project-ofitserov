@@ -16,7 +16,7 @@ if($_GET['result'] == 'catCreated'){ ?>
 
 if($_GET['result'] == 'catUpdated'){ ?>
 <div class="success notification__title notification--error notification--with-description mb-50">
-<p> Категория обновлена </p>
+Категория обновлена
 </div>
 
 
@@ -29,8 +29,10 @@ if($_GET['result'] == 'catUpdated'){ ?>
 
 if($_GET['result'] == 'catDeleted'){ ?>
 <div class="errors notification__title notification--error notification--with-description mb-50">
-<p> Категория удалена !</p>
+ Категория удалена !
 </div>
 
 
 <?php } ?>
+<?php
+

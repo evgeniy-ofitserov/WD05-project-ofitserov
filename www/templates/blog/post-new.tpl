@@ -12,17 +12,35 @@
                         <label class="label" for="add-post-name">Заголовок</label>
                         <input class="input" name="post-title" id="add-post-name" type="text" placeholder="Введите заголовок поста" />
                     </div>
+                    <div class="add-post-content__name mt-40">
+                        <label class="label" for="add-post-name">Категории</label>
+                        <select name='postCat'>
+                            <?php foreach ($cats as $cat): ?>
+
+                            <option value="<?=$cat['id']?>"><?=$cat['cat_title']?></option>
+
+                            <?php endforeach ?>
+
+                        </select>
+
+                    </div>
+                    
                     <div class="add-post-content__img mt-30">
+
                         <section class="upload-file">
                             <h6 class="upload-file__title">Изображение</h6>
                             <p class="upload-file__description">изображение и параметры 945px и больше, высота от 400px</p>
                             <input class="input-file" type="file" name="post-image" id="upload-file" data-multiple-caption="{count}" />
                             <label class="input-file-mark" for="upload-file">Выбрать файл</label><span>Файл не выбран</span>
                         </section>
+                        
                     </div>
+                    
                     <div class="add-post-content__main mt-30">
-                        <label class="label" for="addPostText">Содержание</label>
-                            <textarea class="textarea input-post-content" name="post-text" id="addPostText" placeholder="Введите текст поста"></textarea>
+                    <div class="mt-30 mb-30">
+                        <label class="label " for="ckEditor">Содержание</label>
+                    </div>
+                            <textarea class="textarea input-post-content" name="post-text" id="ckEditor" placeholder="Введите текст поста"></textarea>
                         </div>
                     <div class="add-post-content__submit mt-30">
                         <input class="button button-save mr-20" type="submit" name="new-post" value="Добавить" />
@@ -33,3 +51,10 @@
         </div>
     </div>
 </div>
+<script src="<?=HOST?>libs\ckeditor\ckeditor.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+CKEDITOR.replace( 'ckEditor' );
+});
+</script>
