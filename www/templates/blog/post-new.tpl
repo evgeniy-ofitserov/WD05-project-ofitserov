@@ -3,7 +3,6 @@
         <div class="col-10 offset-1 p-0">
             <div class="add-post-content">
                 <h1 class="title-general mt-0 mb-10">Добавить пост</h1>
-   
 
                      <?php require ROOT . "templates/_parts/_errors.tpl" ?>
           

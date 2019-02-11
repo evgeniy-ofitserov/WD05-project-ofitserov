@@ -1,4 +1,8 @@
 <?php
+if(!isAdmin() ){
+    headed('Location:' . HOST );
+    die();
+}
 
 $title  = 'Редактировать пост' . ' | ';
 
@@ -8,6 +12,8 @@ $post = R::load('posts', $_GET['id'] );
 $cats = R::find('categories', 'ORDER BY cat_title ASC');
 
 // Проверяем
+
+
 if(isset($_POST['edit-post'])) {
 
 
@@ -108,9 +114,9 @@ if(isset($_POST['edit-post'])) {
 
             }
             R::store($post);
-                header('Location: ' . HOST . 'blog');
+                header('Location: ' . HOST . "blog?result=postUpdated");
                 exit();
-        }
+    }
 }
 
 
@@ -118,6 +124,7 @@ ob_start();
 include  ROOT ."templates/_parts/_header.tpl";
 include ROOT . "templates/blog/post-edit.tpl";
 $content = ob_get_contents();
+
 ob_end_clean();
 
 include  ROOT ."templates/_parts/_head.tpl";

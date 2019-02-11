@@ -1,5 +1,10 @@
 <?php
 
+if(!isAdmin() ){
+    headed('Location:' . HOST );
+    die();
+}
+
 $title  = 'Создать новую категорию ' . ' | ';
 
 if(isset($_POST['cat-new'])){

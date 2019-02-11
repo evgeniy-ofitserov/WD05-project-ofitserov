@@ -6,7 +6,7 @@ $title  = 'Обо мне' . ' | ';
 
 ob_start();
 include  ROOT ."templates/_parts/_header.tpl";
-include ROOT . "templates/blog/blog-posts-all.tpl";
+include ROOT . "templates/about/about.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 

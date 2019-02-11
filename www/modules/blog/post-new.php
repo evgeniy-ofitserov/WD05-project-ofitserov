@@ -1,5 +1,10 @@
 <?php
 
+if(!isAdmin()){
+    headed('Location:' . HOST );
+    die();
+}
+
 $title  = 'Добавить пост' . ' | ';
 
 // Получаем список всех категорий
@@ -90,7 +95,7 @@ if(isset($_POST['new-post'])) {
 
             }
             R::store($post);
-                header('Location: ' . HOST . 'blog');
+                header('Location: ' . HOST . "blog?result=postCreated");
                 exit();
         }
 }

@@ -1,5 +1,8 @@
 <?php
-
+if(!isAdmin() ){
+    headed('Location:' . HOST );
+    die();
+}
 $title  = 'Удалить  пост' . ' | ';
 
 // Получаем список всех категорий  и постов 
@@ -7,8 +10,7 @@ $post = R::load('posts', $_GET['id'] );
 
 
 if(isset($_POST['post-del']) ){
-    // удаляем  категорию
-
+    
     $postImgFolterLocation = ROOT . 'usercontent/post/';
 
 

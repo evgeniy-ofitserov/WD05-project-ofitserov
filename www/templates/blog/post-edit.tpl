@@ -46,8 +46,9 @@
                                 <div class="upload-file-image-box">
 
                                 <img src="<?=HOST?>/usercontent/post/<?=$post['post_img_small']?>" alt="Изображение" />
-                              
-                                <a class="button button-delete button--small-delete upload-file-image-box--button-position" href="#">Удалить</a></div>
+
+
+                            </div>
                             </section>
                         </div>
             <?php } ?>

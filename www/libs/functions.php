@@ -8,6 +8,20 @@ function adopt($text)
 }
 
 
+function isAdmin(){
+
+    $resault = false;
+    if(isset( $_SESSION['logger_user'] ) && $_SESSION['login'] == 1){
+
+    if($_SESSION['role'] == 'admin'){
+        $resault = true;
+    }
+        return $resault;
+    }
+}
+
+
+
 
 function rus_date() {
     // Перевод
