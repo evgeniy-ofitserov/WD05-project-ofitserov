@@ -9,6 +9,7 @@ $title  = 'Добавить пост' . ' | ';
 
 // Получаем список всех категорий
 
+
 $cats = R::find('categories', 'ORDER BY cat_title ASC');
 
 

@@ -11,11 +11,9 @@ $sql = 'SELECT
 
         FROM `posts`
 
-
-        INNER JOIN categories
-        ON posts.post_cat = categories.id
         INNER JOIN users
         ON posts.author_id = users.id
+        LEFT JOIN categories ON categories.id = posts.post_cat
         WHERE posts.id =  ' . $_GET['id']. ' LIMIT 1 ';
 
 

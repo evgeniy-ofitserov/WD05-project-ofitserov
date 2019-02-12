@@ -4,22 +4,20 @@
 			<div class="row">
 			
 				<div class="col-10 offset-1">
-
-				   <?php if( isAdmin() ) { ?>
-
-					<div class="post-head">
+					<div class="post-head mt-30 ">
 						<h1><?=$post['title']?></h1>
-                        <a href="<?=HOST?>blog/post-edit?id=<?=$post['id']?>" class="button button-edit post-head--position " name="edit-button"/>Редактировать</a>
 					</div>
-				<?php } ?>
-				 <?php if( isAdmin() ) { ?>
-					<div class="post-head mt-30">
+				   <?php if( isAdmin() ) { ?>
+				
+					<div class="post-head-button ">
+                        <a href="<?=HOST?>blog/post-edit?id=<?=$post['id']?>" class=" post-head-button--edit button button-edit post-head--position " name="edit-button"/>Редактировать</a>
+	
+						<a href="<?=HOST?>blog/post-delete?id=<?=$post['id']?>" class="button button-delete post-head--position  post-head--position--del" name="delete-button"/>Удалить</a>
+				</div>
 
-						<a href="<?=HOST?>blog/post-delete?id=<?=$post['id']?>" class="button button-delete post-head--position post-head--position--del" name="delete-button"/>Удалить</a>
-		
-					</div>
 				<?php } ?>
-					<div class="post-info">
+				
+					<div class="post-info mt-30">
 						<div class="post-info__author"><?=$post['name']?> <?=$post['subname']?></div>
 						<div class="post-info__topic"><a class="postlink" href="#"><?=$post['cat_title']?></a></div>
 						<div class="post-info__date"><? echo rus_date('j F Y H:i', strtotime($post['date_time']))?></div>
