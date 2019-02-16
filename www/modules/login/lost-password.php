@@ -3,6 +3,7 @@
 // Выводим title  на странице
 
 $title = 'Восстановление пароля ' . ' | ' ;
+$email = false;
 
 
 // Если есть такое массив, тогда выполняем проверку 
@@ -10,9 +11,18 @@ $title = 'Восстановление пароля ' . ' | ' ;
     if ( isset($_POST['lost-pass'])) {
     
         // проверка на ввод email
-
-        if ( trim($_POST['email']) == '') {
-            $errors[] = ['title' => 'Введите Email' ];
+        if (trim($_POST['email']) == '') {
+            $errors[] = ['title' => 'Введите Email', 'descr' => '<p>Email обязателен для восстановления.</p>'];
+        }else{
+            
+            $email = $_POST['email'];
+    
+            if (preg_match("/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i", $email)) {
+                $email = true;
+    
+            }else{
+                $errors[] = ['title' => 'Неверный формат email', 'descr' => '<p>Укажите правильный формат, напимер: - MyEmail@mail.ru </p>'];
+            }
         }
         // Если ошибок нет
         if ( empty($errors)) {

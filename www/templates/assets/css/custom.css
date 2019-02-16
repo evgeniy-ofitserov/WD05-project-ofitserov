@@ -12,3 +12,6 @@
 .tac{
   text-align: center;
 }
+.nav__link--active{
+  text-decoration: none!important;
+}

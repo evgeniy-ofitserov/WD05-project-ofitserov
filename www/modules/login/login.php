@@ -5,15 +5,25 @@
 $title = 'Вход на сайт ' . ' | ' ;
 $userEmail = '';
 $userPass = '';
+$email = false;
+
 // Проверяем на ошибки
 
 if (isset($_POST['enter-login'])) {
 
 
-    
     if (trim($_POST['email']) == '') {
-        $errors[] = ['title' => 'Введите Email',
-                      'descr' => 'Email обфзателен при входе на сайт'  ];
+        $errors[] = ['title' => 'Введите Email', 'descr' => '<p>Email обязателен для регистрации.</p>'];
+    }else{
+        
+        $email = $_POST['email'];
+
+        if (preg_match("/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i", $email)) {
+            $email = true;
+
+        }else{
+            $errors[] = ['title' => 'Неверный формат email', 'descr' => '<p>Укажите правильный формат, напимер: - MyEmail@mail.ru </p>'];
+        }
     }
     if (trim($_POST['password']) == '') {
         $errors[] = ['title' => 'Введите пароль'];

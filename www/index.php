@@ -71,12 +71,59 @@ switch ($uri[0]) {
         case 'contacts':
         include "modules/contacts/index.php";
         break;
+    // ::::::::::::::::::: BLOG :::::::::::::::::::
+
         case 'blog':
         include "modules/blog/index.php";
         break;
+        
+        case 'blog/post-new':
+        include "modules/blog/post-new.php";
+        break;
+
+        case 'blog/post-edit':
+        include "modules/blog/post-edit.php";
+        break;
+        case 'blog/post-delete':
+        include "modules/blog/post-delete.php";
+        break;
+        //Отдельный пост
+
+        case 'blog/post':
+        include "modules/blog/post.php";
+        break;
+
+    // ::::::::::::::::::: END BLOG :::::::::::::::::::
+
+    // ::::::::::::::::::: Category :::::::::::::::::::
+
+    case 'blog/categories':
+    include "modules/categories/all.php";
+    break;
+    
+    case 'blog/category-new':
+    include "modules/categories/new.php";
+    break;
+    
+    case 'blog/category-edit':
+    include "modules/categories/edit.php";
+    break;
+    
+    case 'blog/category-delete':
+    include "modules/categories/delete.php";
+    break;
+    
+
+// ::::::::::::::::::: END Category :::::::::::::::::::
+
+
     default:
         include "modules/main/index.php";
         break;
+
+
+
+
 }
 
 /*..............................
