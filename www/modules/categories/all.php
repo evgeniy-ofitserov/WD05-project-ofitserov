@@ -1,4 +1,8 @@
 <?php
+if(!isAdmin() ){
+    headed('Location:' . HOST );
+    die();
+}
 
 $title  = 'Категории блога ' . ' | ';
 
