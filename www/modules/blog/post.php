@@ -11,15 +11,20 @@ $sql = 'SELECT
 
         FROM `posts`
 
-        INNER JOIN users
-        ON posts.author_id = users.id
+        INNER JOIN users ON posts.author_id = users.id
         LEFT JOIN categories ON categories.id = posts.post_cat
         WHERE posts.id =  ' . $_GET['id']. ' LIMIT 1 ';
 
 
-
 // Выполняет запрос через метод РБ getAll, тк у нас массив
 $post = R::getAll($sql);
+
+// echo '<pre>';
+// print_r($post);
+// echo '</pre>';
+// die();
+
+
 
 $post = $post[0];
 
