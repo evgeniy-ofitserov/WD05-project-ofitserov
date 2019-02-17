@@ -4,7 +4,7 @@
 
 // ПОЛУЧАЕМ  один  ПОСТ со всеми данными 
 
-$sql = 'SELECT 
+$sqlPost = 'SELECT 
         posts.id, posts.title, posts.post_img, posts.text, posts.post_cat, posts.date_time, posts.author_id,
         users.name, users.subname,
         categories.cat_title
@@ -20,11 +20,25 @@ $sql = 'SELECT
 
 
 // Выполняет запрос через метод РБ getAll, тк у нас массив
-$post = R::getAll($sql);
+$post = R::getAll($sqlPost);
 
 $post = $post[0];
 
 $title  = $post['title'];
+
+
+
+$sqlComments = 'SELECT 
+        comments.text, comments.date_time, comments.user_id,
+        users.name, users.subname, users.avatar_small
+
+        FROM `comments`
+        
+        INNER JOIN users
+        ON comments.user_id = users.id
+        WHERE comments.post_id =  ' .$_GET['id'];
+
+$comments = R::getAll($sqlComments);
 
 
 
@@ -46,6 +60,8 @@ if( isset($_POST['comment-add'])) {
             exit();
     }
 }
+
+
 
 ob_start();
 include  ROOT ."templates/_parts/_header.tpl";

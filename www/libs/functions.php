@@ -8,6 +8,28 @@ function adopt($text)
 }
 
 
+function commentNumber ($num) {
+    //Оставляем две последние цифры от $num
+    $number = substr($num, -2);
+
+    //Если 2 последние цифры входят в диапазон от 11 до 14
+    //Тогда подставляем окончание "ЕВ" 
+    if($number > 10 and $number < 15)
+    {
+        $term = "ев";
+    } else { 
+
+        $number = substr($number, -1);
+
+        if($number == 0) {$term = "ев";}
+        if($number == 1 ) {$term = "й";}
+        if($number > 1 ) {$term = "я";}
+        if($number > 4 ) {$term = "ев";}
+    }
+
+    echo  $num.' комментари'.$term;
+}
+
 function isAdmin(){
 
     $resault = false;
@@ -20,6 +42,14 @@ function isAdmin(){
     }
 }
 
+
+function isLoggedIn(){
+    $result = false;
+    if (isset($_SESSION['logger_user']) && $_SESSION['login'] == 1) {
+        $result = true;
+    }
+    return $result;
+}
 
 
 
