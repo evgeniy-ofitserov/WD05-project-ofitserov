@@ -16,8 +16,7 @@ $sql = 'SELECT
         ON posts.post_cat = categories.id
         INNER JOIN users
         ON posts.author_id = users.id
-        WHERE posts.id =  ' . $_GET['id']. ' LIMIT 1 ';
-
+        WHERE posts.id =  ' .$_GET['id']. ' LIMIT 1 ';
 
 
 // Выполняет запрос через метод РБ getAll, тк у нас массив
@@ -27,6 +26,26 @@ $post = $post[0];
 
 $title  = $post['title'];
 
+
+
+if( isset($_POST['comment-add'])) {
+
+    if(trim($_POST['comment-text']) == '') {
+        $errors[] = ['title' => 'Комментарий не может быть пустым'];
+    }
+    
+    if( empty($errors)){
+        $comment = R::dispense('comments');
+        $comment->postId = htmlentities($_GET['id']);
+        $comment->userId = htmlentities($_SESSION['logger_user']['id']);
+        $comment->text = trim($_POST['comment-text']);
+        $comment->date_time = R::isoDateTime();
+
+        R::store($comment);
+            header('Location: ' . HOST . "blog/post?id=" . $_GET['id']);
+            exit();
+    }
+}
 
 ob_start();
 include  ROOT ."templates/_parts/_header.tpl";

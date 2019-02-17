@@ -15,3 +15,13 @@
 .nav__link--active{
   text-decoration: none!important;
 }
+/* .avatar--small{
+background: url(../img/avatars/avatar.jpg) no-repeat center/cover;
+width: 48px;
+width: 48px;
+
+} */
+
+.notification{
+  display: none;
+}
