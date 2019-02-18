@@ -12,7 +12,7 @@ $sqlPost = 'SELECT
         FROM `posts`
 
 
-        INNER JOIN categories
+        LEFT JOIN categories
         ON posts.post_cat = categories.id
         INNER JOIN users
         ON posts.author_id = users.id
@@ -42,23 +42,25 @@ $comments = R::getAll($sqlComments);
 
 
 
-if( isset($_POST['comment-add'])) {
+if(!empty($_POST)) { 
+        if( isset($_POST['comment-add'])) {
 
-    if(trim($_POST['comment-text']) == '') {
-        $errors[] = ['title' => 'Комментарий не может быть пустым'];
-    }
-    
-    if( empty($errors)){
-        $comment = R::dispense('comments');
-        $comment->postId = htmlentities($_GET['id']);
-        $comment->userId = htmlentities($_SESSION['logger_user']['id']);
-        $comment->text = trim($_POST['comment-text']);
-        $comment->date_time = R::isoDateTime();
+                if(trim($_POST['comment-text']) == '') {
+                        $errors[] = ['title' => 'Комментарий не может быть пустым'];
+                }
+                
+                if( empty($errors)) {
+                        $comment = R::dispense('comments');
+                        $comment->postId = htmlentities($_GET['id']);
+                        $comment->userId = htmlentities($_SESSION['logger_user']['id']);
+                        $comment->text = trim($_POST['comment-text']);
+                        $comment->date_time = R::isoDateTime();
 
-        R::store($comment);
-            header('Location: ' . HOST . "blog/post?id=" . $_GET['id']);
-            exit();
-    }
+                        R::store($comment);
+                        header('Location: ' . HOST . "blog/post?id=" . $_GET['id']);
+                        exit();
+                }
+        }
 }
 
 

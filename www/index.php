@@ -2,6 +2,8 @@
 require "config.php";
 require "db.php";
 require "libs/functions.php";
+$errors = array();
+$success = array();
 session_start();
 
 /*..............................
@@ -116,6 +118,23 @@ switch ($uri[0]) {
 
 // ::::::::::::::::::: END Category :::::::::::::::::::
 
+
+// ::::::::::::::::::: Contacts :::::::::::::::::::
+
+case 'contacts':
+include "modules/contacts/index.php";
+break;
+
+
+case 'contacts-edit':
+include "modules/contacts/edit.php";
+break;
+
+case 'messages':
+include "modules/contacts/messages.php";
+break;
+
+// ::::::::::::::::::: END Contacts :::::::::::::::::::
 
     default:
         include "modules/main/index.php";

@@ -1,37 +1,21 @@
 $(document).ready(function(){
+	$('#comment-add').on('click', function(e) {
+		var text = $('#comment-text').val().trim(text),
+			valid = false,
+			$formComment = $('form-comment'),
+			$notify = $("<div class='notification'><div class='notification__title notification--error '>Комментарий не может быть пустым</div></div>");
 
-console.log('Документ загружен');
-
-
-$('#comment-add').on('click', function(e){
-e.preventDefault();
-
-	// console.log('Клик');
-	var textareas = $('textarea');
-	var text = $('#comment-text').val().trim(text);
-
-	var error = $('.notification');
-		valid = false;
-
-
-	if (text.length == '') {
-		// console.log('error 0');
-		error.fadeIn();
-		textareas.focus(function(){ 
-		error.fadeOut();                             
-		valid = false;
-		});
-	}else{
-		valid = true;
-		if(valid === true){
-			$('#form-comment').submit();
-			
+		if (text.length == 0 && text == '') {
+			e.preventDefault();                            
+			valid = false;
+			$('.comments-form').find('.notification').remove();
+			$($notify).insertBefore('#form-comment');
+		} else {
+			valid = true;
+			$('.comments-form').find('.notification').remove();
+			if(valid === true){
+				$formComment.submit();
+			}
 		}
-		
-	}
-
-
-});
-   
-   
+	});
 });
