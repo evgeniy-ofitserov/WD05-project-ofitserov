@@ -3,6 +3,17 @@
 $title  = 'Контакты' . ' | ';
 
 
+
+// Загружаем контакты
+
+$contacts = R::load('contacts', 1);
+
+
+
+
+
+
+
 ob_start();
 include  ROOT ."templates/_parts/_header.tpl";
 include ROOT . "templates/contacts/contacts.tpl";

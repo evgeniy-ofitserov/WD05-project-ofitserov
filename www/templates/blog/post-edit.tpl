@@ -1,12 +1,12 @@
 
 <div class="container pl-0 pr-0 pt-80 pb-120">
+                     <?php require ROOT . "templates/_parts/_errors.tpl" ?>
+
     <div class="row m-0">
         <div class="col-10 offset-1 p-0">
             <div class="add-post-content">
                 <h1 class="title-general mt-0 mb-10">Редактировать пост</h1>
-   
 
-                     <?php require ROOT . "templates/_parts/_errors.tpl" ?>
           
                 <form enctype="multipart/form-data" method="POST" action="<?=HOST?>blog/post-edit?id=<?=$post['id']?>">
                     <div class="add-post-content__name mt-40">
