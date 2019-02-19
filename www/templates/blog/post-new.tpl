@@ -3,9 +3,7 @@
         <div class="col-10 offset-1 p-0">
             <div class="add-post-content">
                 <h1 class="title-general mt-0 mb-10">Добавить пост</h1>
-
                      <?php require ROOT . "templates/_parts/_errors.tpl" ?>
-          
                 <form enctype="multipart/form-data" method="POST" action="<?=HOST?>blog/post-new">
                     <div class="add-post-content__name mt-40">
                         <label class="label" for="add-post-name">Заголовок</label>
@@ -15,17 +13,11 @@
                         <label class="label" for="add-post-name">Категории</label>
                         <select name='postCat'>
                             <?php foreach ($cats as $cat): ?>
-
                             <option value="<?=$cat['id']?>"><?=$cat['cat_title']?></option>
-
                             <?php endforeach ?>
-
                         </select>
-
                     </div>
-                    
                     <div class="add-post-content__img mt-30">
-
                         <section class="upload-file">
                             <h6 class="upload-file__title">Изображение</h6>
                             <p class="upload-file__description">изображение и параметры 945px и больше, высота от 400px</p>
