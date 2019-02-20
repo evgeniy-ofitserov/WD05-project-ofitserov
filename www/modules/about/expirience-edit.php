@@ -1,10 +1,10 @@
 <?php
 
-$title  = 'Обо мне' . ' | ';
+$title  = 'Редактировать - Обо мне' . ' | ';
 
 ob_start();
 include  ROOT ."templates/_parts/_header.tpl";
-include ROOT . "templates/about/about.tpl";
+include ROOT . "templates/about/expirience-edit.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 

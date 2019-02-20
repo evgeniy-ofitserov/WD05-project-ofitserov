@@ -1,10 +1,10 @@
 <?php
 
-$title  = 'Обо мне' . ' | ';
+$title  = 'Редактировать - Навыки' . ' | ';
 
 ob_start();
 include  ROOT ."templates/_parts/_header.tpl";
-include ROOT . "templates/about/about.tpl";
+include ROOT . "templates/about/skills-edit.tpl";
 $content = ob_get_contents();
 ob_end_clean();
 

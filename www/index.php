@@ -67,9 +67,6 @@ switch ($uri[0]) {
         
     // ::::::::::::::::::: END  USERS :::::::::::::::::::
  
-        case 'about':
-        include "modules/about/index.php";
-        break;
         case 'contacts':
         include "modules/contacts/index.php";
         break;
@@ -136,9 +133,30 @@ break;
 
 // ::::::::::::::::::: END Contacts :::::::::::::::::::
 
-    default:
-        include "modules/main/index.php";
-        break;
+// ::::::::::::::::::: About :::::::::::::::::::
+
+case 'about':
+include "modules/about/index.php";
+break;
+
+
+case 'about-edit':
+include "modules/about/about-edit.php";
+break;
+
+case 'skills-edit':
+include "modules/about/skills-edit.php";
+break;
+
+case 'expirience-edit':
+include "modules/about/expirience-edit.php";
+break;
+
+// ::::::::::::::::::: END About :::::::::::::::::::
+
+default:
+    include "modules/main/index.php";
+    break;
 
 
 
