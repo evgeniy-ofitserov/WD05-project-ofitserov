@@ -1,23 +1,18 @@
-
-<?php 
-
-foreach($success as $value){
-    if( count($value) == 1 ){?>
-
-
-        <div class="success notification__title notification--error notification--with-description"><?=$value['title']?></div>
-
-
- <?php   }else if( count($value) == 2 ){ ?>
-    
-    <div class="success notification__title notification--error notification--with-description"><?=$value['title']?></div>
-        <div class="notification__description">
-                <?=@$value['descr']?>
+<?php foreach($success as $itemSuccess) {
+    if(count($itemSuccess) == 1) { ?> 
+        <div class="notification">
+            <div class="notification__title notification--success mt-10 mb-10">
+                <?=$itemSuccess['title']?>
+            </div>
         </div>
-<?php    
-    }
-
-} 
-
-?>
+    <?php } else if(count($itemSuccess) == 2) { ?>
+        <div class="notification">
+            <div class="notification__title notification--success notification--with-description"><?=$itemSuccess['title']?></div>
+                <div class="notification__description tac">
+                    <?=@$itemSuccess['descr']?>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+<?php } ?>
 
