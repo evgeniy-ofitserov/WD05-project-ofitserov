@@ -1,73 +1,47 @@
-	<div class="section-indikators pt-50">
+<?php function skillItem($name, $title){
+		global $skills; ?>
+
+	<div class="col-3">
+	<div class="about-me-tech__input">
+	<label class="label" for="technology-html"><?=$title?></label>
+	<input class="input" name="<?=$name?>" id="technology-html" type="number" placeholder="0" min="0" max="100" value="<?=$skills[$name]?>" />
+	<p class="percent">%</p>
+	</div>
+	</div>
+
+<?php } ?>
+<div class="content-exp-page">
 		<div class="container">
-			<div class="row indikators-block">
-				<div class="offset-md-3 col-md-7">
-					<h2 class="title-general mb-10 color-width">Технологии</h2>
-					<p class="indikators-block__text mt-0 mb-0">Которые использую в работе</p>
-				</div>
-				<div class="col-md-2"><a class="button button-edit" href="about-me-tech-edit.html">Редактировать</a></div>
-			</div>
 			<div class="row">
-				<div class="col-md-2 list-technology"><span class="list-technology__text">Frontend</span><span class="list-technology__text">Backend</span><span class="list-technology__text">Workflow</span></div>
-				<div class="col-md-10">
-					<div class="container-indicators">
-						<div class="row ml-90 pt-40">
-							<div class="indicator"><svg class="svg-box">
-									<circle class="circle circle--green val-90"></circle>
-								</svg>
-								<div class="indicator__text">HTML5</div>
-							</div>
-							<div class="indicator"><svg class="svg-box">
-									<circle class="circle circle--green val-90"></circle>
-								</svg>
-								<div class="indicator__text">CSS3</div>
-							</div>
-							<div class="indicator"><svg class="svg-box">
-									<circle class="circle circle--green val-90"></circle>
-								</svg>
-								<div class="indicator__text">js</div>
-							</div>
-							<div class="indicator"><svg class="svg-box">
-									<circle class="circle circle--green val-90"></circle>
-								</svg>
-								<div class="indicator__text">jQuery</div>
-							</div>
+				<div class="col-md-9 offset-md-1">
+
+				<?php require(ROOT . 'templates/_parts/_errors.tpl');?>
+
+					<h1 class="title-general mt-0 mb-35">Редактировать - Технологии</h1>
+					<form action="<?HOST?>expirience-edit" method="POST" novalidate>
+						<div class="row mb-40">
+							<?php skillItem('html', 'HTML5');?>
+							<?php skillItem('css', 'CSS3');?>
+							<?php skillItem('js', 'JS');?>
+							<?php skillItem('jquery', 'jQuery');?>
 						</div>
-						<div class="row ml-90 pt-40">
-							<div class="indicator"><svg class="svg-box">
-									<circle class="circle circle--blue val-90"></circle>
-								</svg>
-								<div class="indicator__text">PHP</div>
-							</div>
-							<div class="indicator"><svg class="svg-box">
-									<circle class="circle circle--blue val-90"></circle>
-								</svg>
-								<div class="indicator__text">MySql</div>
-							</div>
+						<div class="row mb-40">
+							<?php skillItem('php', 'PHP');?>
+							<?php skillItem('mysql', 'MYSQL');?>
 						</div>
-						<div class="row ml-90 pt-40">
-							<div class="indicator"><svg class="svg-box">
-									<circle class="circle circle--yellow val-90"></circle>
-								</svg>
-								<div class="indicator__text">Git</div>
-							</div>
-							<div class="indicator"><svg class="svg-box">
-									<circle class="circle circle--yellow val-90"></circle>
-								</svg>
-								<div class="indicator__text">Gulp</div>
-							</div>
-							<div class="indicator"><svg class="svg-box">
-									<circle class="circle circle--yellow val-90"></circle>
-								</svg>
-								<div class="indicator__text">Bower</div>
-							</div>
-							<div class="indicator"><svg class="svg-box">
-									<circle class="circle circle--yellow val-90"></circle>
-								</svg>
-								<div class="indicator__text">WebPack</div>
-							</div>
+						<div class="row mb-40">
+							<?php skillItem('git', 'GIT');?>
+							<?php skillItem('gulp', 'GULP');?>
+							<?php skillItem('npm', 'NPM');?>
+							<?php skillItem('yarn', 'YARN');?>
 						</div>
-					</div>
+						<div class="row">
+							<div class="col-auto pr-30">
+							<input class="button button-save" type="submit" name="save-expirience" value="Сохранить" /></div>
+							<div class="col-auto">
+							<a class="button" href="<?HOST?>about"/>Отмена</a></div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>

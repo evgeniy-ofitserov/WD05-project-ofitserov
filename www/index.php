@@ -140,8 +140,8 @@ include "modules/about/index.php";
 break;
 
 
-case 'about-edit':
-include "modules/about/about-edit.php";
+case 'edit-text':
+include "modules/about/edit-text.php";
 break;
 
 case 'skills-edit':

@@ -36,7 +36,6 @@ function createThumbnail($imagePath, $cropWidth = 100, $cropHeight = 100){
 
 	// Возвращаем готовое изображение
 
-	
 	return $imagick;
 	$imagick->destroy();
 }

@@ -8,6 +8,7 @@
     <?php } else if(count($error) == 2) { ?>
         <div class="notification">
             <div class="notification__title notification--error notification--with-description"><?=$error['title']?></div>
+            <div class="notification">
                 <div class="notification__description tac">
                     <?=@$error['descr']?>
                 </div>

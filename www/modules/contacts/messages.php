@@ -26,7 +26,6 @@ if(isset($_POST['deleted-message']) ){
     exit();
 }
 
-
 $title  = 'Сообщения от пользователей'. ' | ';
 ob_start();
 include  ROOT ."templates/_parts/_header.tpl";

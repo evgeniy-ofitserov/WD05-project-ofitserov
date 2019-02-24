@@ -8,7 +8,7 @@
                     <div class="message-user">
                     <form method="POST" action="<?=HOST?>messages?id=<?=$message['id']?>">
 
-                    <input type="submit" name="deleted-message" class="button button-delete button--small-delete float-right" value="Удалить"></input>
+                    <input type="submit" name="deleted-message" class="button button-delete button--small-delete float-right" value="Удалить">
                     </form>
                         <div class="message-user__date mb-20"><?=$message['date_time']?>
                         <a class="contact-message--email" href= "<?=$message['email']?>" ><?=$message['email']?></a>

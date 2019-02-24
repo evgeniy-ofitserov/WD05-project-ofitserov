@@ -1,36 +1,38 @@
+<div class="content-exp-page">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-10">
+				<h1 class="title-general mt-0 mb-35">Редактировать - Опыт работы</h1>
 
-
-	<div class="sectoin-workflow pt-80 pb-120">
-		<div class="container">
-			<div class="row">
-				<div class="offset-md-3 col-md-9 experience-work mb-25">
-					<h2 class="title-general mt-0 mb-0">Опыт работы</h2><a class="button button-edit" href="about-me-work-edit.html">Редактировать</a>
+			<?php foreach ($jobs as $job){ ?>
+				<div class="message-user mb-20">
+				<form action="<?=HOST?>skills-edit?id=<?=$job['id']?>" method="POST">
+				<input class="button button-delete button--small-delete float-right" name="del-jobs" type="submit" value="Удалить">
+				</form>
+				<div class="message-user__date mb-20"><?=$job->period?></div>
+				<div class="message-user-info">
+					<h4 class="title-4 mt-0 mb-0"><?=$job->job_name?></h4>
 				</div>
+				<p class="about-me-job__text"><?=$job->job_description?></p>
 			</div>
-			<div class="row">
-				<div class="offset-md-3 col-md-9">
-					<div class="workflow-block mb-40">
-						<div class="workflow-block__date mb-15"><span>февраль 2017 - по настоящее время</span></div>
-						<div class="workflow-info">
-							<h4 class="title-4 mb-15 mt-0">Frontend разработчик, Вконтакте, mail.ru group</h4>
-							<p>Работы в команде Вконтакте. Работал в команде над обновлением сервиса Музыка, работа над видео разделом. Создание видеолеера. Создание кроссбраузерных компонентов. Работа над оптимизацией скорости загрузки медиа контента.</p>
-						</div>
-					</div>
-					<div class="workflow-block mb-40">
-						<div class="workflow-block__date mb-15"><span>сентябрь 2015 - по январь 2017</span></div>
-						<div class="workflow-info">
-							<h4 class="title-4 mb-15 mt-0">Разработчик интерфейсов, Яндекс</h4>
-							<p>Работы в проекте ЯндексМузыка. Создание новых разделов сервиса. Оптимизация и создание новых компонентов платформы.</p>
-						</div>
-					</div>
-					<div class="workflow-block">
-						<div class="workflow-block__date mb-15"><span>март 2013 - по август 2015</span></div>
-						<div class="workflow-info">
-							<h4 class="title-4 mb-15 mt-0">Веб-разработчик, Cloud studio</h4>
-							<p>Frontend и Backend для клиентских проектов студии. Работа над студийной CMS для интернет магазиновю Участие в разработке CRM системы "Sky CRM". Стек используемых технологий Git, JS, Angular.</p>
-						</div>
-					</div>
+			<?php } ?>
+
+				<form action="<?=HOST?>skills-edit" method="POST" novalidate >
+				<h3 class="title-3 mt-0 mb-35">Добавить новое место</h3>
+
+				<?php require(ROOT . 'templates/_parts/_errors.tpl');?>
+
+				<div class="about-me-edit-form">
+				<label class="label" for="work-date">Период</label>
+				<input class="input" name="period" id="work-date" type="text" placeholder="Введите даты начала и окончания работы" value="<?=@$_POST['period']?>" />
+				<label class="label" for="name-post">Название должности</label>
+				<input class="input" name="job-name" id="name-post" type="text" placeholder="Введите название должности" value="<?=@$_POST['job-name']?>" />
+				<label class="label" for="description-text">Описание работы, должностные обязанности, достигнутые результаты</label>
+				<textarea class="textarea" name="job-description" id="description-text" placeholder="Напишите краткое содержательное описание"><?=@$_POST['job-description']?></textarea>
+				<input class="button button-save" type="submit" name="new-job" value="Добавить" />
 				</div>
+				</form>
 			</div>
 		</div>
 	</div>
+</div>

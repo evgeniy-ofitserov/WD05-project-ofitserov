@@ -2,20 +2,16 @@
 <div class="header-admin">
     <div class="header-admin__left">
         <div class="user ml-20"><a class="avatar-link" href="#!">
-                <div class="avatar avatar--small">
-                        <?php    
-                        if( $_SESSION['logger_user']['avatar_small'] != '' ){?>
-                            <img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logger_user']['avatar_small']?>" alt="<?=$_SESSION['logger_user']['avatar_small']?> "/>
-                     <?php   }else{ ?>
-                        <img src="../img/avatars/avatar.jpg" alt="<?=$_SESSION['logger_user']['avatar_small']?>" />
-                    <?php    
-                        }
-                    ?>
-                 </div>
-                
-            </a>
-            <div class="brif ml-20">
-                <p class="brif__name"><?=$_SESSION['logger_user']['name']?> <?=$_SESSION['logger_user']['subname']?></p><span class="badge"><a href= "<?=HOST?>edit">Администратор</a></span>
+            <div class="user ml-20"><a class="avatar-link" href="<?=HOST?>about">
+            <?php if($_SESSION['logger_user'] && $_SESSION['logger_user']['avatar_small'] != '') { ?>
+                    <div class="avatar avatar--small"><img src="<?=HOST?>usercontent/avatar/<?=$_SESSION['logger_user']['avatar_small']?>" alt="<?=$_SESSION['logger_user']['avatar_small']?>" /></div>
+            <?php }else{ ?>
+                    <div class="avatar avatar--small"><img src="../img/avatars/avatar.jpg" alt="<?=$_SESSION['logger_user']['avatar_small']?>" /></div>
+            <?php } ?>        
+                </a>
+                <div class="brif ml-20">
+                    <p class="brif__name"><?=$_SESSION['logger_user']['name']?> <?=$_SESSION['logger_user']['subname']?></p><span class="badge">Администратор</span>
+                </div>
             </div>
         </div>
         <nav class="admin-nav ml-70"><a href="<?=HOST?>blog/post-new"><i class="fas fa-plus-circle"></i>Пост</a>
