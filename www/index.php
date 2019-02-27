@@ -87,7 +87,6 @@ switch ($uri[0]) {
         include "modules/blog/post-delete.php";
         break;
         //Отдельный пост
-
         case 'blog/post':
         include "modules/blog/post.php";
         break;
@@ -153,6 +152,31 @@ include "modules/about/expirience-edit.php";
 break;
 
 // ::::::::::::::::::: END About :::::::::::::::::::
+
+  // ::::::::::::::::::: BLOG :::::::::::::::::::
+
+  case 'works':
+  include "modules/works/index.php";
+  break;
+  
+  case 'works/works-add':
+  include "modules/works/works-add.php";
+  break;
+
+  case 'works/works-edit':
+  include "modules/works/works-edit.php";
+  break;
+  case 'works/works-delete':
+  include "modules/works/works-delete.php";
+  break;
+
+  //Отдельный работа
+  case 'works/page':
+  include "modules/works/works-page.php";
+  break;
+
+// ::::::::::::::::::: END BLOG :::::::::::::::::::
+
 
 default:
     include "modules/main/index.php";

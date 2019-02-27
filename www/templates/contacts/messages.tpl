@@ -16,7 +16,6 @@
                         <div class="message-user-info"><span class="message-user-info__name"><?=$message['name']?></a></div>
 
                         <p class="message-user__text"><?=$message['message']?></p>
-
                     <?php if($message['message_origin_name_files'] != '') { ?>
                         <span class="message-info-files strong">Прикрепленные файлы
                         <a class="message-user-info-files__link ml-20" target="_blank" href="<?=HOST?>usercontent/upload-files/<?=$message['message_file']?>"><?=$message['message_origin_name_files']?></a></span>
@@ -24,6 +23,9 @@
                     </div>
                 </div>
             <?php endforeach ?>
+            <?php if(count(@$message) == 0) { ?>
+                    <p class="message-user__text">Cписок сообщений пуст..</p>
+            <?php } ?>
             </div>
         </div>
     </div>

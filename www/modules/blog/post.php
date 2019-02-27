@@ -22,9 +22,14 @@ $sqlPost = 'SELECT
 // Выполняет запрос через метод РБ getAll, тк у нас массив
 $post = R::getAll($sqlPost);
 
+
+// echo '<pre>';
+// print_r($post);
+// echo '</pre>'; 
 $post = $post[0];
 
 $title  = $post['title'];
+ 
 
 
 

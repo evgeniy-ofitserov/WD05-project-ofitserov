@@ -19,3 +19,10 @@
 .contact-message--email{
   text-decoration: none;
 }
+.offset--footer{
+  margin-bottom: 50px;
+}
+.card-box__img-blog{
+height: 170px;
+
+}

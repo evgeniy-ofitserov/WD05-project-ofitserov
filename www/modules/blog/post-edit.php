@@ -33,7 +33,6 @@ if(isset($_POST['edit-post'])) {
         $post->authorId = $_SESSION['logger_user']['id'];
 
 
-
         //Загрузка изображение для поста
         if(isset($_FILES['post-image']['name']) && $_FILES['post-image']['tmp_name'] != '') {
             //write file image params in variables
@@ -57,7 +56,7 @@ if(isset($_POST['edit-post'])) {
 
                 //Перемещаем загруженный фал в нужную директорию
                 $db_file_name = rand(100000000, 999999999) . '.' . $fileExt;
-                $postImgFolterLocation = ROOT . 'usercontent/post/';
+                $postImgFolterLocation = ROOT . 'usercontent/work/';
                 $uploadFile = $postImgFolterLocation . $db_file_name;
                 $moveResult = move_uploaded_file($fileTmpLoc, $uploadFile);
 
@@ -113,9 +112,12 @@ if(isset($_POST['edit-post'])) {
             }
 
             }
-            R::store($post);
+            if (empty($errors)) {
+                R::store($post);
                 header('Location: ' . HOST . "blog?result=postUpdated");
                 exit();
+            }
+
     }
 }
 

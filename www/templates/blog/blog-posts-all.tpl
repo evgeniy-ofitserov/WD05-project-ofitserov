@@ -36,5 +36,8 @@ include ROOT . "templates/blog/_results.tpl";
                 </div>
             </div>
         <?php } ?>
+        <?php if (count($posts) == 0 ) { ?>
+			<p>Новых записей пока нет..</p>
+		<?php }?>
     </div>
 </div>
