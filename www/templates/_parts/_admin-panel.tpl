@@ -21,6 +21,7 @@
         <a href="<?=HOST?>about"><i class="fas fa-edit"></i>Обо мне</a>
         <a href="<?=HOST?>contacts"><i class="fas fa-edit"></i>Контакты</a>
         <a href="<?=HOST?>messages"><i class="fas fa-envelope"></i>Сообщения</a></nav>
+    
     </div>
     <div class="header-admin__right"><a href="<?=HOST?>logout"><i class="fas fa-sign-out-alt"></i>Выход</a></div>
 </div> 

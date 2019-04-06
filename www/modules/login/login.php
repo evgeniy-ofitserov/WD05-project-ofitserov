@@ -11,7 +11,6 @@ $email = false;
 
 if (isset($_POST['enter-login'])) {
 
-
     if (trim($_POST['email']) == '') {
         $errors[] = ['title' => 'Введите Email', 'descr' => '<p>Email обязателен для регистрации.</p>'];
     }else{
@@ -34,7 +33,6 @@ if (isset($_POST['enter-login'])) {
 
     // Если ошибок нет ищем в базе данных того пользователя по email
 
-    
 	if ( empty($errors)) {
 		// ищем пользователя в базе
 		$user = R::findOne('users', 'email = ?', array($_POST['email']) );
@@ -56,8 +54,11 @@ if (isset($_POST['enter-login'])) {
 	}
 }
 
-// Готовим контент для центральной части шаблона login.tpl
 
+require  ROOT ."modules/cart/_cart-update-in-login.php";
+
+
+// Готовим контент для центральной части шаблона login.tpl
 ob_start();
 include  ROOT ."templates/login/form-login.tpl";
 $contentReg = ob_get_contents();

@@ -6,7 +6,7 @@
 						<div class="col-8 offset-1">
 							<h1 class="title-general separate-work-title--size"><?=$work['work_name']?></h1>
 						</div>
-						<?php if(!isAdmin()){ ?>
+						<?php if(isAdmin()){ ?>
 						<div class="col-2">
 							<div class="separate-work-head__button-edit">
 							<a class="button button-edit mb-15" href="<?=HOST?>works/works-edit?id=<?=$work['id']?>">Редактировать</a>
@@ -56,9 +56,7 @@
 					<div class="col-5">
 						<div class="separate-work-technologies">
 							<h3 class="title-3 mb-20 mt-0 strong">Технологии</h3>
-							
-								<p><?=$work['work_technology']?></p>
-							
+							<p><?=$work['work_technology']?></p>
 						</div>
 						<div class="separate-work-link-project mb-35">
 							<h3 class="title-3 mb-20 mt-25 strong">Ссылка на проект</h3><a class="separate-work-link-project__link" href="<?=$work['link_project']?>"><?=$work['link_project']?></a>

@@ -24,6 +24,7 @@
                         <input class="button button-enter" type="submit" name="new-pass" value="Установить пароль" />
                         <?php endif ?>
                    </div>
+                
                     </form>
                 </div>
             </div>

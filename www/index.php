@@ -39,7 +39,6 @@ switch ($uri[0]) {
         include "modules/main/index.php";
         break;
 
-
     // ::::::::::::::::::: USERS :::::::::::::::::::
 
 
@@ -77,7 +76,7 @@ switch ($uri[0]) {
         break;
         
         case 'blog/post-new':
-        include "modules/blog/post-new.php";
+        include  "modules/blog/post-new.php";
         break;
 
         case 'blog/post-edit':
@@ -175,15 +174,44 @@ break;
   include "modules/works/works-page.php";
   break;
 
+
 // ::::::::::::::::::: END BLOG :::::::::::::::::::
 
+// ::::::::::::::::::: MAGAZIN :::::::::::::::::::
+
+
+  //e-shop
+  case 'e-shop':
+  include "modules/e-shop/index.php";
+  break;
+
+  case 'e-shop/e-shop-add':
+  include "modules/e-shop/e-shop-add.php";
+  break;
+  case 'e-shop/e-shop-page':
+  include "modules/e-shop/e-shop-page.php";
+  break;
+  case 'e-shop/e-shop-edit':
+  include "modules/e-shop/e-shop-edit.php";
+  break;
+  case 'e-shop/e-shop-delete':
+  include "modules/e-shop/e-shop-delete.php";
+  break;
+
+
+// ::::::::::::::::::: CART :::::::::::::::::::
+
+case 'e-shop/addtocart':
+include "modules/cart/addtocart.php";
+break;
+
+// ::::::::::::::::::: END CART :::::::::::::::::::
+
+// ::::::::::::::::::: END MAGAZIN :::::::::::::::::::
 
 default:
     include "modules/main/index.php";
     break;
-
-
-
 
 }
 

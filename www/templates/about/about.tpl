@@ -24,7 +24,7 @@
 	</div>
 	<div class="section-indikators pt-50">
 		<div class="container">
-		<?php 
+<?php 
     $options = array('radius' => 56, 'width' => 126, 'height' => 126);
 
     function showIndicator($options, $title, $value, $color) { 
@@ -55,7 +55,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-2 list-technology"><span class="list-technology__text">Frontend</span><span class="list-technology__text">Backend</span><span class="list-technology__text">Workflow</span></div>
+            <div class="col-md-2 list-technology"><span class="list-technology__text">Frontend</span>
+			<span class="list-technology__text">Backend</span><span class="list-technology__text">Workflow</span></div>
             <div class="col-md-10">
                 <div class="container-indicators">
                     <div class="row ml-90 pt-40">
@@ -90,7 +91,6 @@
 					<?php if(isAdmin()) { ?>
 						<a class="button button-edit float-right" href="<?=HOST?>skills-edit">Редактировать</a>
 					<?php }?>
-
 				</div>
 			</div>
 		<?php foreach ($jobs as $job) { ?>
@@ -103,9 +103,7 @@
 							<p><?=$job->job_description?></p>
 						</div>
 					</div>
-	
 				</div>
-
 			</div>
 			<?php } ?>
 		</div>

@@ -1,16 +1,9 @@
-	<?php 
-
-    $post = '';
-
-    ?>
+<?php $post = '';?>
     
     <div class="container pb-120 pt-80 pl-0 pr-0">
 <?php
-
 if(isset($_GET['result'])){
-
 include ROOT . "templates/blog/_results.tpl";
-
 }
 ?>
     <div class="blog-title mb-40">

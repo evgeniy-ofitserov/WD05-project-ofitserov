@@ -9,6 +9,7 @@
 			<div class="works-title-right">
             <?php if(isAdmin()) { ?>
                 <a class="button button-edit" href="<?=HOST?>works/works-add">Добавить работу</a>
+				
          <?php } ?>
             </div>
         </div>

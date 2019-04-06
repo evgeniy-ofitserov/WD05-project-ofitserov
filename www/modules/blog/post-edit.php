@@ -7,7 +7,7 @@ if(!isAdmin() ){
 $title  = 'Редактировать пост' . ' | ';
 
 // Получаем список всех категорий  и постов 
-$post = R::load('posts', $_GET['id'] );
+$post = R::load('posts', $_GET['id']);
 
 $cats = R::find('categories', 'ORDER BY cat_title ASC');
 

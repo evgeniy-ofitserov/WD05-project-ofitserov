@@ -78,7 +78,6 @@ if (isset($_POST['update-button-work'])) {
 
                 }
 
-
                 if($moveResult != true) {
                     $errors[] = ['title' => 'Ошибка сохранения файла'];
 
@@ -89,11 +88,12 @@ if (isset($_POST['update-button-work'])) {
                 $target_file = $postImgFolterLocation . $db_file_name;
                 $wmax = 920;
                 $hmax = 620;
-
-                //createThumbnail
-                $img = createThumbnail($target_file, $wmax, $hmax);
+   
+                //createThumbnailBig 
+   
+                $img = createThumbnailBig($target_file, $wmax, $hmax);
                 $img->writeImage($target_file);
-                $works->work_file = $db_file_name;
+                $shop->shop_img = $db_file_name;
 
             
         }

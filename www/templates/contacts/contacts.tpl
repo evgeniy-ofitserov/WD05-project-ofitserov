@@ -29,9 +29,12 @@
 				</div>
 			<?php } ?>
 			<div class="row mb-15">
+			<?php if ($contacts['vk'] == '' && $contacts['facebook'] == '' &&  $contacts['twitter'] == '' ) { ?>
+			<?php }else { ?>
 				<div class="col-6 contacts-category">
-					<p>Социальные сети</p>
+				<p>Социальные сети</p>
 				</div>
+			<?php } ?>	
 				<div class="col-6 link-box-info">
 					<?php if($contacts['vk'] != '') { ?>
 							<p><a class="link link--bold" href="<?=$contacts['vk']?>" target="_blank">Вконтакте</a></p>
